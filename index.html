@@ -390,7 +390,7 @@
   </div>
 </footer>
 
-<!-- MODAL POPUP -->
+<!-- MODAL POPUP (PLAN A VISIT) -->
 <div class="modal-overlay" id="visitModalOverlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle">
     <button class="modal-close" id="visitModalClose" aria-label="Close">&times;</button>
@@ -561,9 +561,11 @@
     if (e.target === visitModalOverlay) closeVisitModal();
   });
 
-  /* 13. FORM VALIDATION: visit modal form */
+  /* 13. FORM VALIDATION: visit modal form (Now Connected to Google Sheets & WhatsApp API) */
   const visitForm = document.getElementById('visitForm');
-  visitForm.addEventListener('submit', (e) => {
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyI6ebysvNkuzn6aIVWsZpmS3mi0XLqlNh2rp-hX6y85f5hmXQsgRn6u8RhYBvhE9pc/exec";
+
+  visitForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let valid = true;
     const name = document.getElementById('visitName');
@@ -581,9 +583,49 @@
     });
 
     if (valid) {
-      showToast("You're on the list — see you Sunday!");
-      visitForm.reset();
-      closeVisitModal();
+      const submitButton = visitForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : "Confirm Visit";
+
+      // Change button state to loading
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      // Map values matching the format expected by the Apps Script
+      const formData = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        subject: `📅 Visit Date: ${date.value}`,
+        message: "Plan a Visit Request"
+      };
+
+      try {
+        // Submit details directly to Google Sheets & WhatsApp pipeline
+        await fetch(WEB_APP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain",
+          },
+          body: JSON.stringify(formData)
+        });
+
+        // Clear inputs, close modal, and display beautiful success toast
+        showToast("You're on the list — we look forward to seeing you!");
+        visitForm.reset();
+        closeVisitModal();
+
+      } catch (error) {
+        console.error("Submission failed:", error);
+        showToast("Error processing request. Please try again.");
+      } finally {
+        // Reset the button layout state
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
     }
   });
 
