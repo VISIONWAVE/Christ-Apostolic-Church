@@ -8,10 +8,6 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-<link rel="manifest" href="./images/site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,7 +17,7 @@
   <div class="container">
     <a href="index.html" class="nav-logo">
       <img src="images/logo.jpg" alt="Christ Apostolic Church logo" class="nav-logo-img">
-      Finger of God DCC
+      Christ Alone Prayer Mountain
     </a>
 
     <nav class="nav-links" aria-label="Primary">
@@ -63,9 +59,11 @@
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-media">
-    <video autoplay muted loop playsinline poster="poster.jpg">
-      <source src="worship-bg.mp4" type="video/mp4">
-    </video>
+    <!-- Using a static photo for now. To switch to video later, replace this img
+         with: <video autoplay muted loop playsinline poster="images/pastor-preaching.jpg">
+                 <source src="images/worship-bg.mp4" type="video/mp4">
+               </video> -->
+    <img src="images/pastor.jpg" alt="Pastor Olusegun Oladeji ministering at Christ Apostolic Church, Christ Alone Prayer Mountain">
   </div>
   <div class="hero-content">
     <p class="eyebrow hero-eyebrow">Welcome Home</p>
@@ -115,7 +113,7 @@
 <section class="about-preview section">
   <div class="container">
     <div class="about-media-frame about-media">
-      <img src="images/pastor.jpg" alt="Congregation gathered in worship at Christ Apostolic Church (Finger of God DCC)">
+      <img src="images/pastor-preaching.jpg" alt="Pastor Olusegun Oladeji preaching at Christ Apostolic Church, Christ Alone Prayer Mountain">
     </div>
     <div class="about-text">
       <p class="eyebrow">Who We Are</p>
@@ -152,15 +150,15 @@
       <h2>Catch Up on the Word</h2>
     </div>
     <div class="sermon-feature">
-      <div class="sermon-video">
-        <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Latest sermon" allowfullscreen></iframe>
+      <div class="sermon-video sermon-video-static">
+        <img src="images/pastor-preaching.jpg" alt="Sermon video coming soon">
+        <div class="sermon-video-label">Sermon Video Coming Soon</div>
       </div>
       <div class="sermon-meta">
         <p class="eyebrow" style="color:var(--color-gold);">June 29, 2026</p>
         <h3 style="color:#fff;">Anchored: Standing Firm in Shifting Seasons</h3>
         <p>Pastor Olusegun Oladeji (H.O.J. Idunnu Jesu) unpacks what it means to stay rooted in faith when everything around us feels uncertain.</p>
-        <!-- <a href="sermons.html" class="btn btn-outline" style="margin-top:16px;">View All Sermons</a> -->
-        <p style="margin-top:16px;">COMING SOON!!!!!</p>
+        <a href="sermons.html" class="btn btn-outline" style="margin-top:16px;">View All Sermons</a>
       </div>
     </div>
   </div>
@@ -261,7 +259,7 @@
       </div>
       <p class="project-percent"><span id="projectPercentLabel">0</span>% funded</p>
       <div class="project-body">
-        <p>We're building a new 3,000-seat auditorium to welcome the growing Finger of God DCC family and host community outreach events. Every contribution — large or small — brings us closer to completion.</p>
+        <p>We're building a new 3,000-seat auditorium to welcome the growing Christ Alone Prayer Mountain family and host community outreach events. Every contribution — large or small — brings us closer to completion.</p>
         <a href="#give" class="btn btn-primary" style="margin-top:20px;">Support the Project</a>
       </div>
     </div>
@@ -331,7 +329,7 @@
     <div class="testimony-slider">
       <div class="testimony-track" id="testimonyTrack">
         <div class="testimony-slide">
-          <p class="quote">"Finger of God DCC didn't just give me a church to attend — it gave me a family that walked with me through the hardest season of my life."</p>
+          <p class="quote">"Christ Alone Prayer Mountain didn't just give me a church to attend — it gave me a family that walked with me through the hardest season of my life."</p>
           <p class="author">Ifeoma A.</p>
         </div>
         <div class="testimony-slide">
@@ -353,7 +351,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="footer-brand">Christ Apostolic Church (Finger of God DCC)</div>
+        <div class="footer-brand">Christ Apostolic Church, Christ Alone Prayer Mountain</div>
         <p>One Fold, One Shepherd — John 10:16. A family of faith in Ilaro, Ogun State, growing together.</p>
         <div class="footer-social">
           <a href="#" aria-label="Facebook">F</a>
@@ -382,7 +380,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Christ Apostolic Church (Finger of God DCC). All rights reserved.</p>
+      <p>&copy; 2026 Christ Apostolic Church, Christ Alone Prayer Mountain. All rights reserved.</p>
       <p>Site built with grace, one line of code at a time.</p>
     </div>
   </div>

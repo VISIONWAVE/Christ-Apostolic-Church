@@ -775,6 +775,34 @@ p { color: var(--color-ink-soft); }
   border: 0;
 }
 
+.sermon-video-static {
+  position: relative;
+  cursor: default;
+  pointer-events: none;
+}
+
+.sermon-video-static img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%) brightness(0.7);
+}
+
+.sermon-video-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  background: rgba(16, 27, 48, 0.35);
+}
+
 .sermon-video .play-placeholder {
   position: absolute;
   inset: 0;
