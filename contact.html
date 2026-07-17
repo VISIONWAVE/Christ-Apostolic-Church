@@ -307,18 +307,20 @@
     }
   });
 
-  /* FORM VALIDATION: contact form */
+  /* FORM VALIDATION & GOOGLE SHEETS/WHATSAPP SUBMISSION */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyI6ebysvNkuzn6aIVWsZpmS3mi0XLqlNh2rp-hX6y85f5hmXQsgRn6u8RhYBvhE9pc/exec";
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let valid = true;
     const name = document.getElementById('contactName');
     const email = document.getElementById('contactEmail');
     const message = document.getElementById('contactMessage');
 
+    // Validation checks
     [
       [name, name.value.trim().length > 1],
       [email, emailPattern.test(email.value.trim())],
@@ -328,10 +330,51 @@
       if (!isValid) valid = false;
     });
 
+    // If validation passes, process the submission
     if (valid) {
-      formSuccess.classList.add('is-visible');
-      contactForm.reset();
-      setTimeout(() => formSuccess.classList.remove('is-visible'), 6000);
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : "Send Message";
+
+      // Change button state to visual loading
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      // Match the values with your script payload structure
+      const formData = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        subject: "General Contact / Message", // Form does not have subject field, so we supply a generic tag
+        message: message.value.trim()
+      };
+
+      try {
+        // Send request to your Google Script Web App URL
+        await fetch(WEB_APP_URL, {
+          method: "POST",
+          mode: "no-cors", 
+          headers: {
+            "Content-Type": "text/plain",
+          },
+          body: JSON.stringify(formData)
+        });
+
+        // Show the built-in success card and reset form fields
+        formSuccess.classList.add('is-visible');
+        contactForm.reset();
+        setTimeout(() => formSuccess.classList.remove('is-visible'), 6000);
+
+      } catch (error) {
+        console.error("Submission failed:", error);
+        alert("We had trouble logging your message online, but our lines are open! Please call us if your request is urgent.");
+      } finally {
+        // Restore button state
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
     }
   });
 
