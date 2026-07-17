@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Christ Apostolic Church (Finger of God DCC)</title>
+<meta name="description" content="Get in touch with Christ Apostolic Church (Finger of God DCC) — send a message, find us on the map, or reach our prayer line.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="Christ Apostolic Church logo" class="nav-logo-img">
+      Finger of God DCC
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sermons.html">Sermons</a>
+      <div class="nav-dropdown" id="resourcesDropdown">
+        <a href="#" class="nav-dropdown-toggle">Resources
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="sunday-school.html">Sunday School Manual</a>
+          <a href="sermons.html">Sermon Archive</a>
+          <a href="contact.html#prayer">Prayer Requests</a>
+        </div>
+      </div>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a href="#" class="btn btn-primary nav-cta" data-modal-open>Plan a Visit</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="sermons.html">Sermons</a>
+  <a href="sunday-school.html" class="mobile-submenu">Sunday School Manual</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="#" class="btn btn-primary" style="margin-top:20px;" data-modal-open>Plan a Visit</a>
+</nav>
+
+<!-- PAGE HEADER: Contact Us -->
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">We'd Love to Hear From You</p>
+    <h1>Contact Us</h1>
+    <p>Questions, prayer requests, or just want to say hello? Reach out — we respond to every message.</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM SECTION: Name, Email, Message + JS validation -->
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-form-card">
+      <h3>Send a Message</h3>
+      <p style="margin-bottom:20px;">Fill out the form below and our team will get back to you within 48 hours.</p>
+      <p class="form-success" id="formSuccess">Thank you! Your message has been sent — we'll be in touch soon.</p>
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="contactName">Full Name</label>
+          <input type="text" id="contactName" name="contactName" required>
+          <span class="form-error">Please enter your name.</span>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email Address</label>
+          <input type="email" id="contactEmail" name="contactEmail" required>
+          <span class="form-error">Please enter a valid email address.</span>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="contactMessage" required></textarea>
+          <span class="form-error">Please enter a message (at least 10 characters).</span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="contact-info-card">
+        <h3>Reach Us Directly</h3>
+        <div class="contact-info-row">
+          <span class="icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 5 14.5 5 9.5C5 5.9 8 3 12 3C16 3 19 5.9 19 9.5C19 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <p>Opp Poly Third Gate, Irepodun CDA Area, Sarumi, Ilaro, Ogun State, Nigeria</p>
+        </div>
+        <div class="contact-info-row">
+          <span class="icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5H20V19H4V5Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 6L12 13L20 6" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <a href="mailto:cacgospelchannel@gmail.com">cacgospelchannel@gmail.com</a>
+        </div>
+        <div class="contact-info-row">
+          <span class="icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4H9L11 9L8.5 10.5C9.5 12.5 11.5 14.5 13.5 15.5L15 13L20 15V19C20 20.1 19.1 21 18 21C10.3 21 4 14.7 4 7C4 5.9 4.9 5 5 4Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <a href="tel:+2349063646231">+234 906 364 6231</a>
+        </div>
+        <div class="map-embed">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=Irepodun+Sarumi+Ilaro+Ogun+State+Nigeria&output=embed" title="Christ Apostolic Church (Finger of God DCC) location map"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRAYER LINE SECTION: Phone/WhatsApp -->
+<section class="prayer-line section" id="prayer">
+  <div class="container">
+    <p class="eyebrow">Need Prayer?</p>
+    <h2>Our Prayer Line Is Open</h2>
+    <p style="max-width:520px; margin:0 auto;">Whatever you're facing, you don't have to face it alone. Call or message our prayer line and someone from our team will pray with you.</p>
+    <div class="prayer-actions">
+      <a href="tel:+2349063646231" class="btn btn-navy">Call Prayer Line</a>
+      <a href="https://wa.me/2349048019909" class="btn btn-primary" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Christ Apostolic Church (Finger of God DCC)</div>
+        <p>One Fold, One Shepherd — John 10:16. A family of faith in Ilaro, Ogun State, growing together.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">F</a>
+          <a href="#" aria-label="Instagram">I</a>
+          <a href="#" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="sunday-school.html">Sunday School</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+        <p>Sunday School &ndash; 8:00am&ndash;9:00am</p>
+        <p>Glorious Service &ndash; 9:00am&ndash;12:00pm</p>
+        <p>Tue Prophetic Bible Study &ndash; 5&ndash;8pm</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Opp Poly Third Gate, Irepodun CDA Area, Sarumi, Ilaro, Ogun State</p>
+        <a href="tel:+2349063646231">+234 906 364 6231</a>
+        <a href="mailto:cacgospelchannel@gmail.com">cacgospelchannel@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Christ Apostolic Church (Finger of God DCC). All rights reserved.</p>
+      <p>Site built with grace, one line of code at a time.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL POPUP -->
+<div class="modal-overlay" id="visitModalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle">
+    <button class="modal-close" id="visitModalClose" aria-label="Close">&times;</button>
+    <h3 id="visitModalTitle">Plan Your Visit</h3>
+    <p class="modal-sub">Let us know you're coming so we can welcome you properly.</p>
+    <form id="visitForm" novalidate>
+      <div class="form-group">
+        <label for="visitName">Full Name</label>
+        <input type="text" id="visitName" name="visitName" required>
+        <span class="form-error">Please enter your name.</span>
+      </div>
+      <div class="form-group">
+        <label for="visitEmail">Email</label>
+        <input type="email" id="visitEmail" name="visitEmail" required>
+        <span class="form-error">Please enter a valid email.</span>
+      </div>
+      <div class="form-group">
+        <label for="visitDate">Which Sunday?</label>
+        <input type="date" id="visitDate" name="visitDate" required>
+        <span class="form-error">Please choose a date.</span>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Visit</button>
+    </form>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ============================================================
+     CONTACT PAGE SCRIPT
+     ============================================================ */
+
+  /* STICKY NAVBAR */
+  const navbar = document.getElementById('navbar');
+  function handleNavbarScroll() {
+    navbar.classList.toggle('is-scrolled', window.scrollY > 30);
+  }
+  window.addEventListener('scroll', handleNavbarScroll);
+  handleNavbarScroll();
+
+  /* MOBILE MENU */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  function openMobileMenu() {
+    mobileMenu.classList.add('is-open');
+    mobileOverlay.classList.add('is-open');
+    hamburgerBtn.classList.add('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('is-open');
+    mobileOverlay.classList.remove('is-open');
+    hamburgerBtn.classList.remove('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.contains('is-open') ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+
+  const resourcesDropdown = document.getElementById('resourcesDropdown');
+  if (resourcesDropdown) {
+    const toggle = resourcesDropdown.querySelector('.nav-dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth < 900) {
+        e.preventDefault();
+        resourcesDropdown.classList.toggle('is-open');
+      }
+    });
+  }
+
+  /* MODAL POPUP */
+  const visitModalOverlay = document.getElementById('visitModalOverlay');
+  const visitModalClose = document.getElementById('visitModalClose');
+  document.querySelectorAll('[data-modal-open]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      visitModalOverlay.classList.add('is-open');
+      closeMobileMenu();
+    });
+  });
+  function closeVisitModal() {
+    visitModalOverlay.classList.remove('is-open');
+  }
+  visitModalClose.addEventListener('click', closeVisitModal);
+  visitModalOverlay.addEventListener('click', (e) => {
+    if (e.target === visitModalOverlay) closeVisitModal();
+  });
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2200);
+  }
+  const visitForm = document.getElementById('visitForm');
+  visitForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('visitName');
+    const email = document.getElementById('visitEmail');
+    const date = document.getElementById('visitDate');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    [
+      [name, name.value.trim().length > 1],
+      [email, emailPattern.test(email.value.trim())],
+      [date, date.value.trim().length > 0]
+    ].forEach(([field, isValid]) => {
+      field.closest('.form-group').classList.toggle('has-error', !isValid);
+      if (!isValid) valid = false;
+    });
+    if (valid) {
+      showToast("You're on the list — see you Sunday!");
+      visitForm.reset();
+      closeVisitModal();
+    }
+  });
+
+  /* FORM VALIDATION: contact form */
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('contactName');
+    const email = document.getElementById('contactEmail');
+    const message = document.getElementById('contactMessage');
+
+    [
+      [name, name.value.trim().length > 1],
+      [email, emailPattern.test(email.value.trim())],
+      [message, message.value.trim().length >= 10]
+    ].forEach(([field, isValid]) => {
+      field.closest('.form-group').classList.toggle('has-error', !isValid);
+      if (!isValid) valid = false;
+    });
+
+    if (valid) {
+      formSuccess.classList.add('is-visible');
+      contactForm.reset();
+      setTimeout(() => formSuccess.classList.remove('is-visible'), 6000);
+    }
+  });
+
+  /* LAZY LOAD: map iframe */
+  const lazyIframes = document.querySelectorAll('iframe[loading="lazy"]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '150px' });
+    lazyIframes.forEach((el) => io.observe(el));
+  }
+
+  /* BACK TO TOP BUTTON */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('is-visible', window.scrollY > 300);
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>

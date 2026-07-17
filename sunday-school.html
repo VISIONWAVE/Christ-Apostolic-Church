@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunday School Manual | Christ Apostolic Church (Finger of God DCC)</title>
+<meta name="description" content="Browse the Christ Apostolic Church (Finger of God DCC) Sunday School Manual, week by week, with memory verses, lesson outlines, and discussion questions.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="Christ Apostolic Church logo" class="nav-logo-img">
+      Finger of God DCC
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sermons.html">Sermons</a>
+      <div class="nav-dropdown is-open" id="resourcesDropdown">
+        <a href="#" class="nav-dropdown-toggle">Resources
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="sunday-school.html" class="active">Sunday School Manual</a>
+          <a href="sermons.html">Sermon Archive</a>
+          <a href="contact.html#prayer">Prayer Requests</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="#" class="btn btn-primary nav-cta" data-modal-open>Plan a Visit</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="sermons.html">Sermons</a>
+  <a href="sunday-school.html" class="mobile-submenu active">Sunday School Manual</a>
+  <a href="contact.html">Contact</a>
+  <a href="#" class="btn btn-primary" style="margin-top:20px;" data-modal-open>Plan a Visit</a>
+</nav>
+
+<!-- PAGE HEADER: Sunday School Manual -->
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Resources</p>
+    <h1>Sunday School Manual</h1>
+    <p>Fifty-two weeks of lessons for our Sunday School teachers and members — pick a week to get started.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="manual-layout">
+
+      <!-- MANUAL NAV: Sticky sidebar with Week 1 - Week 52 using JS -->
+      <div>
+        <button class="manual-sidebar-toggle" id="sidebarToggle">
+          <span id="sidebarToggleLabel">Select a Week</span>
+          <svg width="12" height="12" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <aside class="manual-sidebar" id="manualSidebar">
+          <div class="manual-week-list" id="weekList"></div>
+        </aside>
+      </div>
+
+      <!-- MANUAL CONTENT: Display lesson for selected week -->
+      <div class="manual-content" id="manualContent">
+        <!-- content injected by JS -->
+      </div>
+
+    </div>
+
+    <!-- DOWNLOAD BUTTON: Download full PDF -->
+    <div class="manual-download">
+      <a href="SundaySchoolManual.pdf" class="btn btn-navy" download>Download Full Manual (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Christ Apostolic Church (Finger of God DCC)</div>
+        <p>One Fold, One Shepherd — John 10:16. A family of faith in Ilaro, Ogun State, growing together.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">F</a>
+          <a href="#" aria-label="Instagram">I</a>
+          <a href="#" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="sunday-school.html">Sunday School</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+        <p>Sunday School &ndash; 8:00am&ndash;9:00am</p>
+        <p>Glorious Service &ndash; 9:00am&ndash;12:00pm</p>
+        <p>Tue Prophetic Bible Study &ndash; 5&ndash;8pm</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Opp Poly Third Gate, Irepodun CDA Area, Sarumi, Ilaro, Ogun State</p>
+        <a href="tel:+2349063646231">+234 906 364 6231</a>
+        <a href="mailto:cacgospelchannel@gmail.com">cacgospelchannel@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Christ Apostolic Church (Finger of God DCC). All rights reserved.</p>
+      <p>Site built with grace, one line of code at a time.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL POPUP -->
+<div class="modal-overlay" id="visitModalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle">
+    <button class="modal-close" id="visitModalClose" aria-label="Close">&times;</button>
+    <h3 id="visitModalTitle">Plan Your Visit</h3>
+    <p class="modal-sub">Let us know you're coming so we can welcome you properly.</p>
+    <form id="visitForm" novalidate>
+      <div class="form-group">
+        <label for="visitName">Full Name</label>
+        <input type="text" id="visitName" name="visitName" required>
+        <span class="form-error">Please enter your name.</span>
+      </div>
+      <div class="form-group">
+        <label for="visitEmail">Email</label>
+        <input type="email" id="visitEmail" name="visitEmail" required>
+        <span class="form-error">Please enter a valid email.</span>
+      </div>
+      <div class="form-group">
+        <label for="visitDate">Which Sunday?</label>
+        <input type="date" id="visitDate" name="visitDate" required>
+        <span class="form-error">Please choose a date.</span>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Visit</button>
+    </form>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ============================================================
+     SUNDAY SCHOOL PAGE SCRIPT
+     ============================================================ */
+
+  /* STICKY NAVBAR */
+  const navbar = document.getElementById('navbar');
+  function handleNavbarScroll() {
+    navbar.classList.toggle('is-scrolled', window.scrollY > 30);
+  }
+  window.addEventListener('scroll', handleNavbarScroll);
+  handleNavbarScroll();
+
+  /* MOBILE MENU */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  function openMobileMenu() {
+    mobileMenu.classList.add('is-open');
+    mobileOverlay.classList.add('is-open');
+    hamburgerBtn.classList.add('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('is-open');
+    mobileOverlay.classList.remove('is-open');
+    hamburgerBtn.classList.remove('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.contains('is-open') ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+
+  /* MODAL POPUP */
+  const visitModalOverlay = document.getElementById('visitModalOverlay');
+  const visitModalClose = document.getElementById('visitModalClose');
+  document.querySelectorAll('[data-modal-open]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      visitModalOverlay.classList.add('is-open');
+      closeMobileMenu();
+    });
+  });
+  function closeVisitModal() {
+    visitModalOverlay.classList.remove('is-open');
+  }
+  visitModalClose.addEventListener('click', closeVisitModal);
+  visitModalOverlay.addEventListener('click', (e) => {
+    if (e.target === visitModalOverlay) closeVisitModal();
+  });
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2200);
+  }
+  const visitForm = document.getElementById('visitForm');
+  visitForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('visitName');
+    const email = document.getElementById('visitEmail');
+    const date = document.getElementById('visitDate');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    [
+      [name, name.value.trim().length > 1],
+      [email, emailPattern.test(email.value.trim())],
+      [date, date.value.trim().length > 0]
+    ].forEach(([field, isValid]) => {
+      field.closest('.form-group').classList.toggle('has-error', !isValid);
+      if (!isValid) valid = false;
+    });
+    if (valid) {
+      showToast("You're on the list — see you Sunday!");
+      visitForm.reset();
+      closeVisitModal();
+    }
+  });
+
+  /* SUNDAY SCHOOL TAB SYSTEM: 52-week data + render + default to current week */
+  const authoredLessons = {
+    1: {
+      topic: 'Anchored: The Foundation of Faith',
+      verse: '"Now faith is the substance of things hoped for, the evidence of things not seen." — Hebrews 11:1',
+      text: 'Hebrews 11:1-6',
+      intro: 'Every believer\'s walk begins with faith — not as a feeling, but as a firm foundation. This week we explore what real faith looks like and why it matters.',
+      outline: [
+        'Faith is substance, not sentiment — it produces action.',
+        'Faith pleases God because it trusts His character, not just His promises.',
+        'Every generation of believers has walked this same road before us.'
+      ],
+      conclusion: 'True faith is not the absence of doubt, but the decision to trust God despite it. This week, identify one area where you can put your faith into action.',
+      questions: [
+        'What is the difference between hope and faith, according to Hebrews 11:1?',
+        'Share a time your faith was tested. What did you learn?',
+        'How can our class encourage one another to walk by faith this week?'
+      ]
+    },
+    2: {
+      topic: 'Living in Grace, Not Performance',
+      verse: '"For by grace are ye saved through faith; and that not of yourselves: it is the gift of God." — Ephesians 2:8',
+      text: 'Ephesians 2:1-10',
+      intro: 'Many Christians unknowingly slip into performance-based faith. This week we return to the simple, freeing truth of grace.',
+      outline: [
+        'Grace is unearned favor — we cannot work for what is freely given.',
+        'Good works flow from grace; they do not earn it.',
+        'Living in grace frees us from shame and striving.'
+      ],
+      conclusion: 'Rest in what Christ has already done. Let your obedience be a response to grace, not an attempt to earn it.',
+      questions: [
+        'Where do you find yourself trying to "earn" God\'s approval?',
+        'How does understanding grace change the way you view your mistakes?',
+        'What is one good work God may be inviting you into this week — not to earn favor, but as a response to it?'
+      ]
+    },
+    3: {
+      topic: 'Purpose: Discovering God\'s Design for You',
+      verse: '"For we are his workmanship, created in Christ Jesus unto good works." — Ephesians 2:10',
+      text: 'Ephesians 2:10, Jeremiah 29:11',
+      intro: 'God did not create you by accident. This lesson helps believers begin to identify the unique purpose God has placed in them.',
+      outline: [
+        'You are God\'s handiwork — intentionally designed.',
+        'Good works were prepared in advance for you to walk in.',
+        'Purpose is discovered in community, not isolation.'
+      ],
+      conclusion: 'Purpose unfolds over time. Stay faithful in what is in front of you, and trust God to reveal the rest.',
+      questions: [
+        'What has God consistently placed on your heart to do or care about?',
+        'Who in your life can help you see gifts you may not notice in yourself?',
+        'What is one small step you can take this week toward your purpose?'
+      ]
+    },
+    4: {
+      topic: 'The Power of Prayer',
+      verse: '"The effectual fervent prayer of a righteous man availeth much." — James 5:16',
+      text: 'James 5:13-18, Matthew 6:5-13',
+      intro: 'Prayer is not a religious formality — it is our direct line of communication with God. This week we examine what makes prayer effective.',
+      outline: [
+        'Prayer is relationship, not ritual.',
+        'Fervent, sincere prayer carries real spiritual power.',
+        'Jesus modeled a pattern of prayer we can follow today.'
+      ],
+      conclusion: 'Commit to a consistent, honest prayer life this week — even five focused minutes a day can transform your walk with God.',
+      questions: [
+        'What tends to distract or discourage you from praying consistently?',
+        'How does the Lord\'s Prayer (Matthew 6:9-13) shape the way you pray?',
+        'Share a specific prayer request with your group this week.'
+      ]
+    }
+  };
+
+  const manualContent = document.getElementById('manualContent');
+  const weekListEl = document.getElementById('weekList');
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebarToggleLabel = document.getElementById('sidebarToggleLabel');
+  const manualSidebar = document.getElementById('manualSidebar');
+
+  function getLessonForWeek(week) {
+    if (authoredLessons[week]) return authoredLessons[week];
+    return {
+      topic: 'Lesson Coming Soon',
+      verse: 'Content for this week\'s memory verse is being finalized by our Sunday School team.',
+      text: 'To be announced',
+      intro: 'This lesson is currently being prepared. Please check back soon, or download the full manual PDF for the latest available content.',
+      outline: ['Full outline coming soon.'],
+      conclusion: 'Please check back closer to this week, or contact the church office for early access to this lesson.',
+      questions: ['Discussion questions will be added when this lesson is published.']
+    };
+  }
+
+  function renderWeek(week) {
+    const lesson = getLessonForWeek(week);
+    manualContent.innerHTML = `
+      <p class="week-tag">Week ${week}</p>
+      <h2>${lesson.topic}</h2>
+      <div class="manual-field">
+        <h4>Memory Verse</h4>
+        <p class="verse-box">${lesson.verse}</p>
+      </div>
+      <div class="manual-field">
+        <h4>Bible Text</h4>
+        <p>${lesson.text}</p>
+      </div>
+      <div class="manual-field">
+        <h4>Introduction</h4>
+        <p>${lesson.intro}</p>
+      </div>
+      <div class="manual-field">
+        <h4>Lesson Outline</h4>
+        <ol>${lesson.outline.map((point) => `<li>${point}</li>`).join('')}</ol>
+      </div>
+      <div class="manual-field">
+        <h4>Conclusion</h4>
+        <p>${lesson.conclusion}</p>
+      </div>
+      <div class="manual-field">
+        <h4>Discussion Questions</h4>
+        <ul class="question-list">${lesson.questions.map((q) => `<li>${q}</li>`).join('')}</ul>
+      </div>
+    `;
+    document.querySelectorAll('#weekList button').forEach((btn) => {
+      btn.classList.toggle('active', parseInt(btn.getAttribute('data-week'), 10) === week);
+    });
+    sidebarToggleLabel.textContent = `Week ${week} — ${lesson.topic}`;
+  }
+
+  /* Auto-select: default to current week using JS Date */
+  function getCurrentWeekNumber() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 1);
+    const diffDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+    const week = Math.ceil((diffDays + start.getDay() + 1) / 7);
+    return Math.min(Math.max(week, 1), 52);
+  }
+
+  const currentWeek = getCurrentWeekNumber();
+
+  for (let i = 1; i <= 52; i++) {
+    const btn = document.createElement('button');
+    btn.setAttribute('data-week', i);
+    btn.innerHTML = `Week ${i}${i === currentWeek ? ' <span class="current-badge">Current</span>' : ''}`;
+    btn.addEventListener('click', () => {
+      renderWeek(i);
+      if (window.innerWidth < 900) {
+        manualSidebar.classList.remove('is-open');
+      }
+    });
+    weekListEl.appendChild(btn);
+  }
+
+  renderWeek(currentWeek);
+
+  /* Mobile sidebar dropdown toggle */
+  sidebarToggle.addEventListener('click', () => {
+    manualSidebar.classList.toggle('is-open');
+  });
+
+  /* BACK TO TOP BUTTON */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('is-visible', window.scrollY > 300);
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>

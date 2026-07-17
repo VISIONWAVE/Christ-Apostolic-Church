@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sermons | Christ Apostolic Church (Finger of God DCC)</title>
+<meta name="description" content="Watch and download the latest sermons from Christ Apostolic Church (Finger of God DCC). Search by topic or date.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="Christ Apostolic Church logo" class="nav-logo-img">
+      Finger of God DCC
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sermons.html" class="active">Sermons</a>
+      <div class="nav-dropdown" id="resourcesDropdown">
+        <a href="#" class="nav-dropdown-toggle">Resources
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="sunday-school.html">Sunday School Manual</a>
+          <a href="sermons.html">Sermon Archive</a>
+          <a href="contact.html#prayer">Prayer Requests</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="#" class="btn btn-primary nav-cta" data-modal-open>Plan a Visit</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="sermons.html" class="active">Sermons</a>
+  <a href="sunday-school.html" class="mobile-submenu">Sunday School Manual</a>
+  <a href="contact.html">Contact</a>
+  <a href="#" class="btn btn-primary" style="margin-top:20px;" data-modal-open>Plan a Visit</a>
+</nav>
+
+<!-- PAGE HEADER: Sermons -->
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Grow in the Word</p>
+    <h1>Sermons</h1>
+    <p>Catch up on past messages, search by topic, or download the audio for offline listening.</p>
+  </div>
+</section>
+
+<!-- SERMON SEARCH/FILTER: By topic, date using JS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="sermon-toolbar">
+      <div class="sermon-search">
+        <input type="text" id="sermonSearch" placeholder="Search sermons by title or keyword...">
+      </div>
+      <div class="sermon-filters" id="sermonFilters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="faith">Faith</button>
+        <button class="filter-btn" data-category="family">Family</button>
+        <button class="filter-btn" data-category="purpose">Purpose</button>
+        <button class="filter-btn" data-category="prayer">Prayer</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERMON GRID: YouTube embeds + Download MP3 links -->
+<section class="section" style="padding-top:32px;">
+  <div class="container">
+    <div class="sermons-grid" id="sermonsGrid">
+
+      <div class="sermon-card" data-category="faith" data-title="anchored standing firm in shifting seasons">
+        <div class="thumb">
+          <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Anchored: Standing Firm in Shifting Seasons" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <span class="date">June 29, 2026</span>
+          <h3>Anchored: Standing Firm in Shifting Seasons</h3>
+          <p>Pastor Olusegun Oladeji (H.O.J. Idunnu Jesu) &middot; Faith</p>
+          <div class="actions">
+            <a href="#" download>Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sermon-card" data-category="family" data-title="the home that hosts heaven">
+        <div class="thumb">
+          <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="The Home That Hosts Heaven" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <span class="date">June 22, 2026</span>
+          <h3>The Home That Hosts Heaven</h3>
+          <p>Pastor Olusegun Oladeji (H.O.J. Idunnu Jesu) &middot; Family</p>
+          <div class="actions">
+            <a href="#" download>Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sermon-card" data-category="purpose" data-title="designed on purpose">
+        <div class="thumb">
+          <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Designed on Purpose" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <span class="date">June 15, 2026</span>
+          <h3>Designed on Purpose</h3>
+          <p>Pst Ayodeji Onigbogi (Asst. Pastor) &middot; Purpose</p>
+          <div class="actions">
+            <a href="#" download>Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sermon-card" data-category="prayer" data-title="the language of heaven">
+        <div class="thumb">
+          <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="The Language of Heaven" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <span class="date">June 8, 2026</span>
+          <h3>The Language of Heaven</h3>
+          <p>Pastor Olusegun Oladeji (H.O.J. Idunnu Jesu) &middot; Prayer</p>
+          <div class="actions">
+            <a href="#" download>Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sermon-card" data-category="faith" data-title="faith that outlasts the storm">
+        <div class="thumb">
+          <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Faith That Outlasts the Storm" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <span class="date">June 1, 2026</span>
+          <h3>Faith That Outlasts the Storm</h3>
+          <p>Pastor Olusegun Oladeji (H.O.J. Idunnu Jesu) &middot; Faith</p>
+          <div class="actions">
+            <a href="#" download>Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="sermon-card" data-category="purpose" data-title="steward your season">
+        <div class="thumb">
+          <iframe loading="lazy" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Steward Your Season" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <span class="date">May 25, 2026</span>
+          <h3>Steward Your Season</h3>
+          <p>Pastor Olusegun Oladeji (H.O.J. Idunnu Jesu) &middot; Purpose</p>
+          <div class="actions">
+            <a href="#" download>Download MP3</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="no-results" id="noResults">No sermons match your search. Try a different keyword or filter.</p>
+  </div>
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Christ Apostolic Church (Finger of God DCC)</div>
+        <p>One Fold, One Shepherd — John 10:16. A family of faith in Ilaro, Ogun State, growing together.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">F</a>
+          <a href="#" aria-label="Instagram">I</a>
+          <a href="#" aria-label="YouTube">Y</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="sunday-school.html">Sunday School</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+        <p>Sunday School &ndash; 8:00am&ndash;9:00am</p>
+        <p>Glorious Service &ndash; 9:00am&ndash;12:00pm</p>
+        <p>Tue Prophetic Bible Study &ndash; 5&ndash;8pm</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Opp Poly Third Gate, Irepodun CDA Area, Sarumi, Ilaro, Ogun State</p>
+        <a href="tel:+2349063646231">+234 906 364 6231</a>
+        <a href="mailto:cacgospelchannel@gmail.com">cacgospelchannel@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Christ Apostolic Church (Finger of God DCC). All rights reserved.</p>
+      <p>Site built with grace, one line of code at a time.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL POPUP -->
+<div class="modal-overlay" id="visitModalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle">
+    <button class="modal-close" id="visitModalClose" aria-label="Close">&times;</button>
+    <h3 id="visitModalTitle">Plan Your Visit</h3>
+    <p class="modal-sub">Let us know you're coming so we can welcome you properly.</p>
+    <form id="visitForm" novalidate>
+      <div class="form-group">
+        <label for="visitName">Full Name</label>
+        <input type="text" id="visitName" name="visitName" required>
+        <span class="form-error">Please enter your name.</span>
+      </div>
+      <div class="form-group">
+        <label for="visitEmail">Email</label>
+        <input type="email" id="visitEmail" name="visitEmail" required>
+        <span class="form-error">Please enter a valid email.</span>
+      </div>
+      <div class="form-group">
+        <label for="visitDate">Which Sunday?</label>
+        <input type="date" id="visitDate" name="visitDate" required>
+        <span class="form-error">Please choose a date.</span>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Confirm Visit</button>
+    </form>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ============================================================
+     SERMONS PAGE SCRIPT
+     ============================================================ */
+
+  /* STICKY NAVBAR */
+  const navbar = document.getElementById('navbar');
+  function handleNavbarScroll() {
+    navbar.classList.toggle('is-scrolled', window.scrollY > 30);
+  }
+  window.addEventListener('scroll', handleNavbarScroll);
+  handleNavbarScroll();
+
+  /* MOBILE MENU */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileMenuClose = document.getElementById('mobileMenuClose');
+  function openMobileMenu() {
+    mobileMenu.classList.add('is-open');
+    mobileOverlay.classList.add('is-open');
+    hamburgerBtn.classList.add('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('is-open');
+    mobileOverlay.classList.remove('is-open');
+    hamburgerBtn.classList.remove('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.contains('is-open') ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+
+  const resourcesDropdown = document.getElementById('resourcesDropdown');
+  if (resourcesDropdown) {
+    const toggle = resourcesDropdown.querySelector('.nav-dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      if (window.innerWidth < 900) {
+        e.preventDefault();
+        resourcesDropdown.classList.toggle('is-open');
+      }
+    });
+  }
+
+  /* MODAL POPUP */
+  const visitModalOverlay = document.getElementById('visitModalOverlay');
+  const visitModalClose = document.getElementById('visitModalClose');
+  document.querySelectorAll('[data-modal-open]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      visitModalOverlay.classList.add('is-open');
+      closeMobileMenu();
+    });
+  });
+  function closeVisitModal() {
+    visitModalOverlay.classList.remove('is-open');
+  }
+  visitModalClose.addEventListener('click', closeVisitModal);
+  visitModalOverlay.addEventListener('click', (e) => {
+    if (e.target === visitModalOverlay) closeVisitModal();
+  });
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 2200);
+  }
+  const visitForm = document.getElementById('visitForm');
+  visitForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('visitName');
+    const email = document.getElementById('visitEmail');
+    const date = document.getElementById('visitDate');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    [
+      [name, name.value.trim().length > 1],
+      [email, emailPattern.test(email.value.trim())],
+      [date, date.value.trim().length > 0]
+    ].forEach(([field, isValid]) => {
+      field.closest('.form-group').classList.toggle('has-error', !isValid);
+      if (!isValid) valid = false;
+    });
+    if (valid) {
+      showToast("You're on the list — see you Sunday!");
+      visitForm.reset();
+      closeVisitModal();
+    }
+  });
+
+  /* SERMON SEARCH/FILTER: by topic (buttons) and keyword (search box) */
+  const searchInput = document.getElementById('sermonSearch');
+  const filterButtons = document.querySelectorAll('#sermonFilters .filter-btn');
+  const sermonCards = document.querySelectorAll('#sermonsGrid .sermon-card');
+  const noResults = document.getElementById('noResults');
+  let activeCategory = 'all';
+
+  function applySermonFilters() {
+    const keyword = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+    sermonCards.forEach((card) => {
+      const matchesCategory = activeCategory === 'all' || card.getAttribute('data-category') === activeCategory;
+      const matchesKeyword = card.getAttribute('data-title').includes(keyword);
+      const show = matchesCategory && matchesKeyword;
+      card.classList.toggle('is-hidden', !show);
+      if (show) visibleCount++;
+    });
+    noResults.classList.toggle('is-visible', visibleCount === 0);
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.getAttribute('data-category');
+      applySermonFilters();
+    });
+  });
+  searchInput.addEventListener('input', applySermonFilters);
+
+  /* LAZY LOAD: YouTube iframes */
+  const lazyIframes = document.querySelectorAll('iframe[data-src]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.src = el.getAttribute('data-src');
+          el.removeAttribute('data-src');
+          observer.unobserve(el);
+        }
+      });
+    }, { rootMargin: '150px' });
+    lazyIframes.forEach((el) => io.observe(el));
+  } else {
+    lazyIframes.forEach((el) => { el.src = el.getAttribute('data-src'); });
+  }
+
+  /* BACK TO TOP BUTTON */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('is-visible', window.scrollY > 300);
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
