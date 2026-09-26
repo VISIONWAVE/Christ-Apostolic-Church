@@ -3,9 +3,11 @@
  * Extended to cover appointments, members, prayer_requests, blog_posts,
  * recordings — and every insert/update/delete now writes an audit_log row.
  *
- * NEW: whenever an admin changes an appointment's status to confirmed,
- * cancelled, or rescheduled, and that row has a valid contact email,
- * the visitor is emailed automatically via Gmail.
+ * Whenever an admin changes an appointment's status to confirmed,
+ * declined, or rescheduled, and that row has a valid contact email,
+ * the visitor is emailed automatically via Gmail. For "rescheduled",
+ * the email includes the actual new date/time set by the admin
+ * (rescheduled_date / rescheduled_time), not just a generic notice.
  */
 
 import crypto from 'crypto';
@@ -50,7 +52,7 @@ const ALLOWED_TABLES = {
   appointments: [
     // Admin can only move status/notes forward — never rewrite whose
     // appointment it is or what they originally requested.
-    'status', 'admin_notes'
+    'status', 'admin_notes', 'rescheduled_date', 'rescheduled_time'
   ],
 
   prayer_requests: [
@@ -99,14 +101,26 @@ const STATUS_EMAIL_SUBJECTS = {
   rescheduled: 'Your visit date has been updated',
 };
 
+function formatDate(dateStr) {
+  if (!dateStr) return null;
+  return new Date(`${dateStr}T00:00:00`).toLocaleDateString('en-GB', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+  });
+}
+
+function formatTime(timeStr) {
+  if (!timeStr) return null;
+  const [h, m] = timeStr.split(':');
+  const hour = Number(h);
+  const period = hour >= 12 ? 'PM' : 'AM';
+  const hour12 = ((hour + 11) % 12) + 1;
+  return `${hour12}:${m} ${period}`;
+}
+
 function statusEmailBody(row) {
   const status = typeof row.status === 'string' ? row.status.trim().toLowerCase() : '';
   const name = row.name && String(row.name).trim() ? String(row.name).trim() : 'there';
-  const dateStr = row.requested_date
-    ? new Date(`${row.requested_date}T00:00:00`).toLocaleDateString('en-GB', {
-        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
-      })
-    : 'your requested date';
+  const dateStr = formatDate(row.requested_date) || 'your requested date';
   const notesLine = row.admin_notes ? `\n\nNote from the team: ${row.admin_notes}` : '';
 
   if (status === 'confirmed') {
@@ -116,7 +130,15 @@ function statusEmailBody(row) {
     return `Hi ${name},\n\nYour visit request for ${dateStr} has been declined.${notesLine}\n\nIf this doesn't seem right, or you'd like to plan a new visit, just reply to this email or call us on +234 906 364 6231.\n\nC.A.C.G. Family`;
   }
   if (status === 'rescheduled') {
-    return `Hi ${name},\n\nYour visit request has previously been for ${dateStr}, but it's been rescheduled.${notesLine}\n\nIf you have any questions, reply to this email or call us on +234 906 364 6231.\n\nC.A.C.G. Family`;
+    const newDate = formatDate(row.rescheduled_date);
+    const newTime = formatTime(row.rescheduled_time);
+    if (!newDate) {
+      // Safety net: admin hasn't actually set a new date yet — don't send
+      // a vague "it's been rescheduled" email with no useful information.
+      return null;
+    }
+    const whenLine = newTime ? `${newDate} at ${newTime}` : newDate;
+    return `Hi ${name},\n\nYour visit originally requested for ${dateStr} has been rescheduled.\n\nNew date: ${whenLine}\n\nService details:\n- Sunday School: 8am\n- Glorious Service: 9am\n\nLocation: Opp Poly Third Gate, Irepodun CDA Area, Sarumi, Ilaro, Ogun State${notesLine}\n\nIf this new time doesn't work for you, just reply to this email or call us on +234 906 364 6231.\n\nC.A.C.G. Family`;
   }
   return null; // e.g. status === 'pending' — nothing to send
 }
@@ -134,7 +156,7 @@ async function maybeSendAppointmentStatusEmail(row) {
   const subject = STATUS_EMAIL_SUBJECTS[status];
   const body = statusEmailBody(row);
   if (!subject || !body) {
-    console.log(`appointment status email skipped: status "${row.status}" has no matching email (id ${row.id})`);
+    console.log(`appointment status email skipped: status "${row.status}" has no matching email yet, or rescheduled with no date set (id ${row.id})`);
     return;
   }
 

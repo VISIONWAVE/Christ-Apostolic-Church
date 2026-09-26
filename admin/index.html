@@ -376,6 +376,7 @@
             <div class="info">
               <h4>${row.name || 'Untitled'} <span style="color:${STATUS_COLORS[row.status] || 'inherit'}; font-size:0.78rem; font-weight:700; text-transform:uppercase;">&middot; ${row.status || 'pending'}</span></h4>
               <p>${row.contact || ''} &middot; Requested: ${row.requested_date || ''}</p>
+              ${row.status === 'rescheduled' && row.rescheduled_date ? `<p style="margin-top:4px; color:var(--color-gold-deep); font-weight:600;">New date: ${row.rescheduled_date}${row.rescheduled_time ? ' at ' + row.rescheduled_time : ''}</p>` : ''}
               ${row.message ? `<p style="margin-top:4px; font-style:italic;">"${row.message}"</p>` : ''}
             </div>
             <div class="actions">
@@ -385,6 +386,11 @@
                 <option value="declined" ${row.status === 'declined' ? 'selected' : ''}>Declined</option>
                 <option value="rescheduled" ${row.status === 'rescheduled' ? 'selected' : ''}>Rescheduled</option>
               </select>
+              <span data-reschedule-fields="${row.id}" style="display:${row.status === 'rescheduled' ? 'inline-flex' : 'none'}; gap:6px; align-items:center;">
+                <input type="date" data-reschedule-date="${row.id}" value="${row.rescheduled_date || ''}" style="padding:5px 8px; border-radius:6px; border:1px solid var(--color-border);">
+                <input type="time" data-reschedule-time="${row.id}" value="${row.rescheduled_time || ''}" style="padding:5px 8px; border-radius:6px; border:1px solid var(--color-border);">
+                <button type="button" class="btn btn-outline" data-reschedule-save="${row.id}" style="padding:5px 10px; font-size:0.8rem;">Save date</button>
+              </span>
               <button type="button" class="admin-delete-btn" data-delete-id="${row.id}">Delete</button>
             </div>
           </div>
@@ -392,8 +398,42 @@
 
         listEl.querySelectorAll('[data-status-id]').forEach((el) => {
           el.addEventListener('change', async () => {
+            const id = el.getAttribute('data-status-id');
+            const fieldsWrap = listEl.querySelector(`[data-reschedule-fields="${id}"]`);
+            if (el.value === 'rescheduled') {
+              // Show the date/time inputs but don't save yet — wait for
+              // the admin to actually pick a date, so we never send a
+              // "rescheduled" email with no new date attached.
+              if (fieldsWrap) fieldsWrap.style.display = 'inline-flex';
+              return;
+            }
             try {
-              await adminCall('appointments', 'update', { id: el.getAttribute('data-status-id'), data: { status: el.value } });
+              await adminCall('appointments', 'update', { id, data: { status: el.value } });
+              refreshList();
+            } catch (err) {
+              alert(err.message);
+            }
+          });
+        });
+
+        listEl.querySelectorAll('[data-reschedule-save]').forEach((el) => {
+          el.addEventListener('click', async () => {
+            const id = el.getAttribute('data-reschedule-save');
+            const dateInput = listEl.querySelector(`[data-reschedule-date="${id}"]`);
+            const timeInput = listEl.querySelector(`[data-reschedule-time="${id}"]`);
+            if (!dateInput.value) {
+              alert('Please pick a new date before saving.');
+              return;
+            }
+            try {
+              await adminCall('appointments', 'update', {
+                id,
+                data: {
+                  status: 'rescheduled',
+                  rescheduled_date: dateInput.value,
+                  rescheduled_time: timeInput.value || null
+                }
+              });
               refreshList();
             } catch (err) {
               alert(err.message);
